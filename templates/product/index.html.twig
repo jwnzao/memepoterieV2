@@ -1,0 +1,19 @@
+{% include 'base.html.twig' %}
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Liste des produits</title>
+  </head>
+  <body>
+    <h1>Cliquez sur un produit pour le modifier</h1>
+    {% for product in product  %}
+        <p><a href="{{ path('modification_produit', {'id':product.id}) }}">{{ product.name }} - {{ product.price }}
+            </a>
+            <a href="{{ path('suppression_produit', {'id':product.id}) }}">Supprimer</a></p>
+        
+    {% endfor %}
+  </body>
+</html>
+
